@@ -1,4 +1,3 @@
-
 def test_products(first_product, second_product):
     assert first_product.name == "Ipone"
     assert first_product.description == "256GB, Серый цвет, 200MP камера"
@@ -8,6 +7,7 @@ def test_products(first_product, second_product):
     assert second_product.description == "128GB, Белый цвет"
     assert second_product.price == 12000.12
     assert second_product.quantity == 2
+
 
 def test_category(first_category):
     assert first_category.name == "Телефоны"
