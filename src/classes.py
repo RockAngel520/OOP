@@ -17,7 +17,7 @@ class Product:
         product = Product
         product.name = parameters_list["name"]
         product.description = parameters_list["description"]
-        product.__price = parameters_list["price"]
+        product.price = parameters_list["price"]
         product.quantity = parameters_list["quantity"]
         return product
 
