@@ -28,7 +28,7 @@ class Product:
     @price.setter
     def price(self, new_price: float):
         if new_price <= 0:
-            print("Цена не должна быть 0 или меньше нуля")
+            print("Цена не должна быть нулевая или отрицательная")
             return
         elif new_price < self.__price:
             user_input = input("Новая цена ниже. Заменить цену?(Y): ")
@@ -60,11 +60,12 @@ class Category:
         Category.product_count += len(products) if products else 0
 
     @property
-    def products(self) -> None:
-        products_str = ''
+    def products_srt(self) -> None:
+        products_str = ""
         for output_product in self.__products:
-            products_str += (f'{output_product.name}, {output_product.price} руб. Остаток:'
-                             f' {output_product.quantity} шт.\n')
+            products_str += (
+                f"{output_product.name}, {output_product.price} руб. Остаток: {output_product.quantity} шт.\n"
+            )
         return products_str
 
     @property
