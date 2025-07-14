@@ -75,9 +75,7 @@ class Category:
     def products_srt(self) -> None:
         products_str = ""
         for output_product in self.__products:
-            products_str += (
-                f"{str(output_product)} шт.\n"
-            )
+            products_str += f"{str(output_product)} шт.\n"
         return products_str
 
     @property
