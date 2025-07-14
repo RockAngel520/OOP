@@ -53,3 +53,13 @@ def test_category_add_product(first_category, first_product):
     assert len(first_category.products) == initial_count + 1
     assert Category.product_count == initial_total + 1
     assert first_category.products[-1].name == "Ipone"
+
+def test_product_print(first_product, second_product):
+    assert str(first_product) == "Ipone, 25000.12 руб. Остаток: 5 шт."
+    assert str(second_product) == "Samsung, 12000.12 руб. Остаток: 2 шт."
+
+def test_products_sum(first_product, second_product):
+    assert first_product + second_product == 149000.84
+
+def test_category_print(first_category):
+    assert str(first_category) == "Телефоны, количество продуктов: 6 шт."
