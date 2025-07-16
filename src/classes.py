@@ -16,7 +16,7 @@ class Product:
         return f"{self.name}, {self.__price} руб. Остаток: {self.quantity} шт."
 
     def __add__(self, other):
-        if type(other) == type(self):
+        if type(other) is type(self):
             return self.__price * self.quantity + other.__price * other.quantity
         raise TypeError
 
@@ -26,7 +26,7 @@ class Product:
             name=parameters_list["name"],
             description=parameters_list["description"],
             price=parameters_list["price"],
-            quantity=parameters_list["quantity"]
+            quantity=parameters_list["quantity"],
         )
 
     @property

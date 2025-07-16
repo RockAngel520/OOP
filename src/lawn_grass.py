@@ -1,5 +1,6 @@
 from src.classes import Product
 
+
 class LawnGrass(Product):
     """Класс газонной травы унаследованный от класса продуктов"""
 
