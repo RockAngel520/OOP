@@ -1,3 +1,5 @@
+import pytest
+
 from src.classes import Category, Product
 
 
@@ -66,3 +68,7 @@ def test_products_sum(first_product, second_product):
 
 def test_category_print(first_category):
     assert str(first_category) == "Телефоны, количество продуктов: 6 шт."
+
+def test_category_add_product_error(first_category):
+    with pytest.raises(TypeError):
+        result = first_category + 1
