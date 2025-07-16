@@ -22,12 +22,12 @@ class Product:
 
     @classmethod
     def new_product(cls, parameters_list: dict):
-        product = Product
-        product.name = parameters_list["name"]
-        product.description = parameters_list["description"]
-        product.price = parameters_list["price"]
-        product.quantity = parameters_list["quantity"]
-        return product
+        return cls(
+            name=parameters_list["name"],
+            description=parameters_list["description"],
+            price=parameters_list["price"],
+            quantity=parameters_list["quantity"]
+        )
 
     @property
     def price(self):
