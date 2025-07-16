@@ -12,6 +12,12 @@ class Product:
         self.__price = price
         self.quantity = quantity
 
+    def __str__(self):
+        return f"{self.name}, {self.__price} руб. Остаток: {self.quantity} шт."
+
+    def __add__(self, other):
+        return self.__price * self.quantity + other.__price * other.quantity
+
     @classmethod
     def new_product(cls, parameters_list: dict):
         product = Product
@@ -59,13 +65,17 @@ class Category:
         Category.category_count += 1
         Category.product_count += len(products) if products else 0
 
+    def __str__(self):
+        all_products = 0
+        for product in self.__products:
+            all_products += product.quantity
+        return f"{self.name}, количество продуктов: {all_products} шт."
+
     @property
     def products_srt(self) -> None:
         products_str = ""
         for output_product in self.__products:
-            products_str += (
-                f"{output_product.name}, {output_product.price} руб. Остаток: {output_product.quantity} шт.\n"
-            )
+            products_str += f"{str(output_product)} шт.\n"
         return products_str
 
     @property
