@@ -1,5 +1,3 @@
-from pyexpat.errors import messages
-
 from src.classes import Product
 from src.lawn_grass import LawnGrass
 from src.smartphone import Smartphone
