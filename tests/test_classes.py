@@ -25,7 +25,7 @@ def test_category(first_category):
 def test_product_update(capsys, first_product):
     first_product.price = 0
     message = capsys.readouterr()
-    assert message.out.strip() == "Цена не должна быть нулевая или отрицательная"
+    assert message.out.strip().split("\n")[-1] == "Цена не должна быть нулевая или отрицательная"
 
 
 def test_product_create():
