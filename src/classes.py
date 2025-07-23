@@ -105,3 +105,9 @@ class Category:
                 Category.product_count += 1
         else:
             raise TypeError
+
+    def middle_price(self):
+        try:
+            return sum([__products.price for __products in self.__products]) / len(self.__products)
+        except ZeroDivisionError:
+            return 0
