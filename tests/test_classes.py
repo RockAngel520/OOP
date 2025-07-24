@@ -74,3 +74,21 @@ def test_category_add_product_error(first_category):
     with pytest.raises(TypeError):
         result = first_category + 1
         return result
+
+
+def test_product_with_zero_quantity():
+    with pytest.raises(ValueError, match="Товар с нулевым количеством не может быть добавлен"):
+        Product("Iphone 15", "512GB, Gray space", 210000.0, 0)
+
+
+def test_middle_price(first_category):
+    assert Category.middle_price(first_category) == 190
+
+
+def test_zero_middle_price():
+    category_without_products = Category(
+        name="Телефоны",
+        description="Хорошие телефоны",
+        products=[],
+    )
+    assert Category.middle_price(category_without_products) == 0
